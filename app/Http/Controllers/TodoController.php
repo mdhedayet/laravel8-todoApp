@@ -142,11 +142,11 @@ class TodoController extends Controller
         if ($todo->completed==0) {
             $todo->completed="1";
             $todo->save();
-            session()->flash('success','Todo mark as done successfully.');
+            session()->flash('success','Todo complete successfully.');
         }else {
             $todo->completed="0";
             $todo->save();
-            session()->flash('success','Todo mark as undone successfully.');
+            session()->flash('success','Todo incomplete successfully.');
         }
         
         return redirect()->action([TodoController::class, 'show'],[$id]);
