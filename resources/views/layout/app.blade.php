@@ -27,6 +27,11 @@
         </div>
     </nav>
     <div class="container py-3">
+        @if (session()->has('success'))
+            <div class="alert alert-success">
+                {{session()->get('success')}}
+            </div>
+        @endif
         <div class="row">
             <div class="col-12">
                 @yield('content')
